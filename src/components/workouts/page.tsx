@@ -1,3 +1,6 @@
+import Banner from "../homepage/Banner";
+import Library from "../homepage/Library";
+
 const WorkoutsPage = () => {
   return (
     <div>
