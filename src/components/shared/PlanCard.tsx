@@ -1,4 +1,4 @@
-import { TLibrary } from "@/app/Types/Type";
+import { TLibrary } from "@/types/Type";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";

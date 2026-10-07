@@ -1,3 +1,5 @@
+import LibraryCard from "../shared/LibraryCard";
+
 const Library = async () => {
   const datas = await LibraryDataFetch();
 

@@ -5,7 +5,7 @@ import Flogo from "@/assets/logo.png";
 const Fotter = () => {
   return (
     <footer className="border-t border-[#22262D] bg-[#0B0D10]">
-      <div className="container mx-auto flex min-h-[105px] flex-col items-center justify-between gap-4 px-6 py-6 md:flex-row md:py-0">
+      <div className="container mx-auto flex min-h-26.25 flex-col items-center justify-between gap-4 px-6 py-6 md:flex-row md:py-0">
         <div className="flex items-center gap-3">
           <Image
             src={Flogo}

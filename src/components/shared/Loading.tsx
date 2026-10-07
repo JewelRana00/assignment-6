@@ -1,5 +1,3 @@
-import React from "react";
-
 const Loading = () => {
   return (
     <div className="flex min-h-87.5 flex-col items-center justify-center gap-4 bg-[#0B0D10]">

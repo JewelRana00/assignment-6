@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function MyPlan() {
   const stats = [
     { label: "Exercises", value: "2", isHighlight: true },

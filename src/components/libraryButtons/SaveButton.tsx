@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useContext } from "react";
-import { TLibrary } from "@/app/Types/Type";
 import { LibraryContext } from "@/Context/libraryContext";
+import { TLibrary } from "@/types/Type";
+import React, { useContext } from "react";
 import { toast } from "react-toastify";
 
 type TReadButtonProps = {
