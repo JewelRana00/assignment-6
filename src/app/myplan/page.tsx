@@ -10,7 +10,9 @@ import PlanSaveCard from "@/components/shared/PlanSaveCard";
 
 const MyPlanPage = () => {
   const context = useContext(LibraryContext);
-
+  const [sortBy, setSortBy] = useState<
+    "duration" | "caloriesBurned" | "rating"
+  >("duration");
   const [activeTab, setActiveTab] = useState<"plan" | "saved">("plan");
 
   if (!context) return null;
@@ -34,6 +36,7 @@ const MyPlanPage = () => {
   // Active tab data
   const currentItems = activeTab === "plan" ? libraryPlan : librarySaved;
 
+  const sortedItems = [...currentItems].sort((a, b) => b[sortBy] - a[sortBy]);
   // Dynamic Stats
   const totalExercises = currentItems.length;
 
@@ -99,10 +102,18 @@ const MyPlanPage = () => {
         <div className=" mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end ">
           <span className="text-xs text-[#717684] sm:text-sm">Sort By</span>
 
-          <select className=" w-full rounded-lg border border-[#1c1e24] bg-[#13151b] px-3 py-2 text-sm text-white outline-none sm:w-auto sm:py-1.5 ">
+          <select
+            value={sortBy}
+            onChange={(e) =>
+              setSortBy(
+                e.target.value as "duration" | "caloriesBurned" | "rating",
+              )
+            }
+            className="w-full rounded-lg border border-[#1c1e24] bg-[#13151b] px-3 py-2 text-sm text-white outline-none sm:w-auto sm:py-1.5"
+          >
             <option value="duration">Duration</option>
-
-            <option value="calories">Calories</option>
+            <option value="caloriesBurned">Calories</option>
+            <option value="rating">Rating</option>
           </select>
         </div>
 
@@ -113,15 +124,15 @@ const MyPlanPage = () => {
             type="radio"
             name="my_tabs"
             className=" tab text-xs sm:text-sm "
-            aria-label="Today’s Plan"
+            aria-label="Today's Plan"
             checked={activeTab === "plan"}
             onChange={() => setActiveTab("plan")}
           />
 
           <div className=" tab-content w-full border-t border-[#1c1e24] bg-[#0d0e12] p-3 sm:p-4 md:p-5 lg:p-6 ">
             <div className="grid gap-3 sm:gap-4">
-              {libraryPlan.length > 0 ? (
-                libraryPlan.map((plan) => (
+              {sortedItems.length > 0 ? (
+                sortedItems.map((plan) => (
                   <div
                     key={plan.id}
                     className=" flex w-full min-w-0 flex-col gap-3 rounded-xl border border-[#1c1e24] bg-[#13151b] p-3 sm:p-4 lg:flex-row lg:items-center lg:justify-between "
@@ -176,8 +187,8 @@ const MyPlanPage = () => {
 
           <div className=" tab-content w-full border-t border-[#1c1e24] bg-[#0d0e12] p-3 sm:p-4 md:p-5 lg:p-6 ">
             <div className="grid gap-3 sm:gap-4">
-              {librarySaved.length > 0 ? (
-                librarySaved.map((plan) => (
+              {sortedItems.length > 0 ? (
+                sortedItems.map((plan) => (
                   <div
                     key={plan.id}
                     className=" flex w-full min-w-0 flex-col gap-3 rounded-xl border border-[#1c1e24] bg-[#13151b] p-3 sm:p-4 lg:flex-row lg:items-center lg:justify-between "
