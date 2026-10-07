@@ -1,5 +1,5 @@
-import Banner from "../homepage/Banner";
-import Library from "../homepage/Library";
+import Banner from "../../components/homepage/Banner";
+import Library from "../../components/homepage/Library";
 
 const WorkoutsPage = () => {
   return (

@@ -1,3 +1,5 @@
+import { TLibrary } from "@/types/Type";
+import { LibraryDataFetch } from "../libraryData/LibraryData";
 import LibraryCard from "../shared/LibraryCard";
 
 const Library = async () => {

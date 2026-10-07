@@ -5,6 +5,8 @@ import { LibraryContext } from "@/Context/libraryContext";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { TLibrary } from "@/types/Type";
+import PlanCard from "@/components/shared/PlanCard";
+import PlanSaveCard from "@/components/shared/PlanSaveCard";
 
 const MyPlanPage = () => {
   const context = useContext(LibraryContext);
@@ -142,7 +144,7 @@ const MyPlanPage = () => {
                 ))
               ) : (
                 /* EMPTY */
-                <div className=" flex min-h-[230px] flex-col items-center justify-center px-4 py-8 text-center sm:min-h-[280px] md:min-h-[320px] ">
+                <div className=" flex min-h-57.5 flex-col items-center justify-center px-4 py-8 text-center sm:min-h-70 md:min-h-80 ">
                   <h2 className=" text-xl font-black uppercase tracking-wide text-white sm:text-2xl ">
                     NOTHING HERE YET
                   </h2>
@@ -153,7 +155,7 @@ const MyPlanPage = () => {
 
                   <Link
                     href="/workouts"
-                    className=" mt-6 flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#B6FF00] px-6 text-sm font-bold text-black transition hover:bg-[#A8EC00] sm:w-auto sm:px-7 "
+                    className=" mt-6 flex min-h-11 w-full items-center justify-center rounded-full bg-[#B6FF00] px-6 text-sm font-bold text-black transition hover:bg-[#A8EC00] sm:w-auto sm:px-7 "
                   >
                     Go to workouts
                   </Link>
@@ -198,7 +200,7 @@ const MyPlanPage = () => {
                 ))
               ) : (
                 /* EMPTY */
-                <div className=" flex min-h-[230px] flex-col items-center justify-center px-4 py-8 text-center sm:min-h-[280px] md:min-h-[320px] ">
+                <div className=" flex min-h-57.5 flex-col items-center justify-center px-4 py-8 text-center sm:min-h-70 md:min-h-80 ">
                   <h2 className=" text-xl font-black uppercase tracking-wide text-white sm:text-2xl ">
                     NOTHING HERE YET
                   </h2>
@@ -209,7 +211,7 @@ const MyPlanPage = () => {
 
                   <Link
                     href="/workouts"
-                    className=" mt-6 flex min-h-[44px] w-full items-center justify-center rounded-full bg-[#B6FF00] px-6 text-sm font-bold text-black transition hover:bg-[#A8EC00] sm:w-auto sm:px-7 "
+                    className=" mt-6 flex min-h-11 w-full items-center justify-center rounded-full bg-[#B6FF00] px-6 text-sm font-bold text-black transition hover:bg-[#A8EC00] sm:w-auto sm:px-7 "
                   >
                     Go to workouts
                   </Link>

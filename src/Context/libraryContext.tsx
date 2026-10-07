@@ -1,6 +1,6 @@
 "use client";
 
-import { TLibrary } from "@/app/Types/Type";
+import { TLibrary } from "@/types/Type";
 import React, { createContext, ReactNode, useState } from "react";
 
 type TLibraryContext = {

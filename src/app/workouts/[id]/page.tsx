@@ -1,8 +1,7 @@
-import { LibraryDataFetch } from "@/app/components/LIbraryDataShare/LibraryData";
-import ReadButton from "@/app/components/libraryDetails/ReadButton";
-import SavedButton from "@/app/components/libraryDetails/SaveButton";
-import { TLibrary } from "@/app/Types/Type";
-
+import ReadButton from "@/components/libraryButtons/ReadButton";
+import SavedButton from "@/components/libraryButtons/SaveButton";
+import { LibraryDataFetch } from "@/components/libraryData/LibraryData";
+import { TLibrary } from "@/types/Type";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { JSX } from "react";
