@@ -18,13 +18,30 @@ type TLibraryProviderProps = {
 };
 
 const LibraryProvider = ({ children }: TLibraryProviderProps) => {
-  const [libraryPlan, setLibraryPlan] = useState<TLibrary[]>([]);
+  const [libraryPlan, setLibraryPlan] = useState<TLibrary[]>(() => {
+    if (typeof window === "undefined") return [];
 
-  const [librarySaved, setLibrarySaved] = useState<TLibrary[]>([]);
+    const savedPlan = localStorage.getItem("libraryPlan");
+
+    return savedPlan ? JSON.parse(savedPlan) : [];
+  });
+
+  const [librarySaved, setLibrarySaved] = useState<TLibrary[]>(() => {
+    if (typeof window === "undefined") return [];
+
+    const savedList = localStorage.getItem("librarySaved");
+
+    return savedList ? JSON.parse(savedList) : [];
+  });
 
   return (
     <LibraryContext.Provider
-      value={{ libraryPlan, setLibraryPlan, librarySaved, setLibrarySaved }}
+      value={{
+        libraryPlan,
+        setLibraryPlan,
+        librarySaved,
+        setLibrarySaved,
+      }}
     >
       {children}
     </LibraryContext.Provider>

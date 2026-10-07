@@ -23,11 +23,23 @@ const MyPlanPage = () => {
   // Remove
   const handleRemovePlan = (id: number, isSavedTab: boolean) => {
     if (isSavedTab) {
-      setLibrarySaved((prev) => prev.filter((item) => item.id !== id));
+      setLibrarySaved((prev) => {
+        const updatedSaved = prev.filter((item) => item.id !== id);
+
+        localStorage.setItem("librarySaved", JSON.stringify(updatedSaved));
+
+        return updatedSaved;
+      });
 
       toast.success("Removed from saved workouts!");
     } else {
-      setLibraryPlan((prev) => prev.filter((item) => item.id !== id));
+      setLibraryPlan((prev) => {
+        const updatedPlan = prev.filter((item) => item.id !== id);
+
+        localStorage.setItem("libraryPlan", JSON.stringify(updatedPlan));
+
+        return updatedPlan;
+      });
 
       toast.success("Workout removed from today's plan!");
     }

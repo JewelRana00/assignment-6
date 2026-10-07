@@ -25,7 +25,11 @@ const ReadButton = ({ data }: TReadButtonProps) => {
       return;
     }
 
-    setLibraryPlan((prev) => [...prev, data]);
+    setLibraryPlan((prev) => {
+      const updatedPlan = [...prev, data];
+      localStorage.setItem("libraryPlan", JSON.stringify(updatedPlan));
+      return updatedPlan;
+    });
 
     toast.success("Successfully added to plan!", {
       position: "top-right",
